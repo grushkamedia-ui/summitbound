@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SummitBound · Life insurance team led by Braden Gross</title>
+<meta name="description" content="SummitBound is a life insurance team led by Braden Gross. Overviews for future agents every Tuesday and Thursday at 4:30 PM Pacific on Zoom.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SummitBound · Protecting families. Building agents.">
+<meta property="og:description" content="SummitBound is a life insurance team led by Braden Gross. Overviews for future agents every Tuesday and Thursday at 4:30 PM Pacific on Zoom.">
+<meta property="og:url" content="https://grushkamedia-ui.github.io/summitbound/">
+<meta property="og:image" content="https://grushkamedia-ui.github.io/summitbound/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: one clear trail up the page — hero with the next overview, then terms, licensing, support, questions, families. Dark navy first, ice-light alternate. */
+:root {
+  --bg: #0B1F33;
+  --surface: #10283F;
+  --ink: #EEF3F8;
+  --muted: #A9B8C7;
+  --gold: #C9A44C;
+  --gold-text: #E6CF8F;
+  --steel: #4A6A8A;
+  --line: rgba(233, 240, 247, 0.13);
+  --on-gold: #0B1F33;
+  --contour: rgba(201, 164, 76, 0.16);
+  --display: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #F4F6F8; --surface: #FFFFFF; --ink: #0B1F33; --muted: #4F6073; --gold: #9A7A2C; --gold-text: #7A5E1C;
+    --steel: #4A6A8A; --line: rgba(11, 31, 51, 0.12); --on-gold: #FFFFFF; --contour: rgba(74, 106, 138, 0.18); color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #F4F6F8; --surface: #FFFFFF; --ink: #0B1F33; --muted: #4F6073; --gold: #9A7A2C; --gold-text: #7A5E1C;
+  --steel: #4A6A8A; --line: rgba(11, 31, 51, 0.12); --on-gold: #FFFFFF; --contour: rgba(74, 106, 138, 0.18); color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 18px/1.6 var(--body); }
+a { color: var(--gold-text); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.12; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 800; }
+h3 { font-size: 1.08rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow { font: 700 0.78rem/1 var(--display); letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-text); }
+.rule { width: 72px; height: 5px; background: var(--gold); border-radius: 3px; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand svg { width: 52px; height: auto; }
+.brand span { font: 800 1rem/1 var(--display); letter-spacing: 0.22em; }
+.nav { display: flex; gap: 22px; }
+.nav a { color: var(--muted); text-decoration: none; font: 600 0.95rem var(--display); }
+.nav a:hover { color: var(--ink); }
+@media (max-width: 760px) { .nav { display: none; } }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: center; padding-block: 40px 72px; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 24px 48px; } }
+.hero-copy { display: grid; gap: 22px; }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.4rem); font-weight: 800; letter-spacing: -0.02em; }
+.hero h1 em { font-style: normal; color: var(--gold-text); }
+.lede { color: var(--muted); font-size: 1.15rem; max-width: 34em; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 22px; border-radius: 10px; font: 700 1rem var(--display); text-decoration: none; cursor: pointer; border: 2px solid transparent; }
+.btn-gold { background: var(--gold); color: var(--on-gold); }
+.btn-gold:hover { filter: brightness(1.06); }
+.btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+.btn-ghost:hover { border-color: var(--gold); }
+
+/* Overview card */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; display: grid; gap: 18px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18); }
+.dates { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.dates li { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.dates b { font: 700 1.02rem var(--display); }
+.dates span { color: var(--muted); font-size: 0.95rem; text-align: right; }
+@media (max-width: 480px) { .hero h1 { font-size: 2.3rem; } .card { padding: 22px 18px; } .dates li { flex-wrap: wrap; } }
+.steps-mini { margin: 0; padding-left: 1.2em; color: var(--muted); display: grid; gap: 4px; }
+.steps-mini strong { color: var(--ink); }
+.card .btn { width: 100%; }
+.copyrow { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.95rem; flex-wrap: wrap; }
+.copyrow button { background: transparent; border: 1px solid var(--line); color: var(--ink); border-radius: 8px; padding: 6px 12px; font: 600 0.9rem var(--display); cursor: pointer; }
+.fine { color: var(--muted); font-size: 0.88rem; }
+
+/* Sections */
+section.band { padding-block: 72px; border-bottom: 1px solid var(--line); }
+@media (max-width: 760px) { section.band { padding-block: 52px; } }
+.head { display: grid; gap: 14px; margin-bottom: 32px; max-width: 40em; }
+.head p { color: var(--muted); }
+.grid4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 640px) { .grid4 { grid-template-columns: minmax(0, 1fr); } }
+.tile { border-top: 3px solid var(--steel); padding-top: 14px; display: grid; gap: 6px; }
+.tile p { color: var(--muted); }
+.terms { display: grid; gap: 0; margin: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.terms div { display: grid; grid-template-columns: 9em minmax(0, 1fr); gap: 16px; padding: 18px 22px; border-top: 1px solid var(--line); }
+.terms div:first-child { border-top: 0; }
+.terms dt { font: 700 0.95rem var(--display); color: var(--gold-text); }
+.terms dd { margin: 0; }
+@media (max-width: 560px) { .terms div { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+.trail { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; }
+.trail li { counter-increment: s; position: relative; padding: 0 0 26px 64px; }
+.trail li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); border: 2px solid var(--gold); font: 800 1rem var(--display); color: var(--gold-text); }
+.trail li::after { content: ""; position: absolute; left: 20px; top: 44px; bottom: 4px; width: 2px; background: var(--line); }
+.trail li:last-child::after { display: none; }
+.trail h3 { margin-bottom: 4px; }
+.trail p { color: var(--muted); }
+.note { margin-top: 8px; padding: 16px 18px; border-left: 4px solid var(--gold); background: var(--surface); border-radius: 0 10px 10px 0; }
+.stat { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 28px; align-items: center; margin-bottom: 30px; }
+.stat .num { font: 800 clamp(3rem, 8vw, 4.8rem)/1 var(--display); color: var(--gold-text); font-variant-numeric: tabular-nums; }
+.stat .num small { display: block; font: 600 0.95rem var(--display); color: var(--muted); letter-spacing: 0.04em; margin-top: 8px; }
+@media (max-width: 560px) { .stat { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+.practices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .practices { grid-template-columns: minmax(0, 1fr); } }
+.practices div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 6px; }
+.practices p { color: var(--muted); }
+.qs { margin: 0; padding-left: 1.4em; display: grid; gap: 12px; max-width: 44em; }
+.qs li::marker { font-family: var(--display); font-weight: 800; color: var(--gold-text); }
+.families { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+@media (max-width: 760px) { .families { grid-template-columns: minmax(0, 1fr); } }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.checks li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; }
+.checks li::before { content: ""; width: 12px; height: 12px; margin-top: 9px; background: var(--gold); transform: rotate(45deg); }
+footer { padding-block: 40px 56px; color: var(--muted); font-size: 0.92rem; }
+footer .wrap { display: grid; gap: 10px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+
+<header class="wrap top">
+  <a class="brand" href="#top" aria-label="SummitBound home">
+    <svg viewBox="0 0 160 100" aria-hidden="true"><path d="M58 100 L104 30 L150 100 Z" fill="#4A6A8A"/><path d="M6 100 L66 8 L126 100 Z" fill="#C9A44C"/><path d="M66 8 L126 100 L112 100 Z" fill="#B08D3A"/></svg>
+    <span>SUMMITBOUND</span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#overview">Overview</a><a href="#terms">Terms</a><a href="#licensing">Licensing</a><a href="#families">For families</a>
+  </nav>
+</header>
+
+<div class="hero" id="top">
+  <canvas id="contours" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Life insurance team · Led by Braden Gross</div>
+      <h1>Protecting families.<br><em>Building agents.</em></h1>
+      <p class="lede">SummitBound is a life insurance team led by Braden Gross, a licensed life insurance agent in California. We help families put coverage in place, and we train new agents to do this work the right way.</p>
+      <div class="ctas">
+        <a class="btn btn-gold js-signup" href="https://ig.me/m/bradengross.oc" target="_blank" rel="noopener">Save a seat at the next overview</a>
+        <a class="btn btn-ghost" href="#families">I'm looking for coverage</a>
+      </div>
+    </div>
+
+    <aside class="card" id="overview" aria-labelledby="ov-title">
+      <div class="eyebrow">For future agents</div>
+      <h2 id="ov-title" style="font-size:1.5rem">Next overviews</h2>
+      <ul class="dates" id="dates"><li><b>Tuesdays and Thursdays</b><span>4:30 PM Pacific</span></li></ul>
+      <p class="fine">30 minutes on Zoom. What agents do day to day, how licensing works and what support looks like. No pressure to decide.</p>
+      <ol class="steps-mini">
+        <li>Tap the button to message us on Instagram.</li>
+        <li>Send the word <strong>SUMMIT</strong>.</li>
+        <li>We reply with the Zoom link for the overview you pick.</li>
+      </ol>
+      <a class="btn btn-gold js-signup" href="https://ig.me/m/bradengross.oc" target="_blank" rel="noopener">Message SUMMIT on Instagram</a>
+      <div class="copyrow"><span>Instagram: <strong>@bradengross.oc</strong></span><button type="button" id="copyWord">Copy “SUMMIT”</button><span id="copied" class="fine" role="status"></span></div>
+    </aside>
+  </div>
+</div>
+
+<section class="band" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">The job</div><div class="rule"></div><h2 id="work-title">What the work actually is</h2></div>
+    <div class="grid4">
+      <div class="tile"><h3>Talk with people who asked</h3><p>Phone conversations with people who asked about life insurance, from home.</p></div>
+      <div class="tile"><h3>Explain options plainly</h3><p>Walk them through their choices in plain English.</p></div>
+      <div class="tile"><h3>Help with the application</h3><p>Help them complete the application with the insurance company.</p></div>
+      <div class="tile"><h3>Follow up</h3><p>Check back with families who started an application.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="terms" aria-labelledby="terms-title">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Before you decide</div><div class="rule"></div><h2 id="terms-title">The honest terms</h2></div>
+    <dl class="terms">
+      <div><dt>Role</dt><dd>Independent contractor.</dd></div>
+      <div><dt>Pay</dt><dd>Commission on policies the insurance company issues and collects premium on. There is no salary or hourly pay.</dd></div>
+      <div><dt>Income</dt><dd>No income is guaranteed, and results vary widely.</dd></div>
+      <div><dt>Costs</dt><dd>Agents may choose to buy leads or live calls. Every cost is explained before you start, and you decide.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band" id="licensing" aria-labelledby="lic-title">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">California · 2026</div><div class="rule"></div><h2 id="lic-title">Getting licensed in California</h2><p>The steps for a life-only license, in order. We walk you through each one.</p></div>
+    <ol class="trail">
+      <li><h3>12-hour course</h3><p>Complete the 12-hour ethics and California Insurance Code course.</p></li>
+      <li><h3>State exam</h3><p>Pass the state life-only exam.</p></li>
+      <li><h3>Apply for your license</h3><p>Apply with the California Department of Insurance, including fingerprints.</p></li>
+    </ol>
+    <p class="note">Since January 1, 2026, the 20-hour prelicensing course is no longer required. Check the current steps at <a href="https://www.insurance.ca.gov/0200-industry/0090-faq/lo-ahfaq.cfm" target="_blank" rel="noopener">insurance.ca.gov</a>.</p>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="sup-title">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Why support matters</div><div class="rule"></div><h2 id="sup-title">How we support new agents</h2></div>
+    <div class="stat">
+      <div class="num">15 in 100<small>still with their hiring company after 4 years</small></div>
+      <p>Most people who start in this industry don't stay with the company that hired them. <a href="https://www.limra.com/en/newsroom/news-releases/2022/five-ways-to-keep-financial-professionals-engaged/" target="_blank" rel="noopener">LIMRA</a> found that in 2020, only about 15 in 100 new financial professionals at agencies that hire beginners were still with their hiring company after four years. Their research points to what helps people stay: early activity, sales training and mentoring.</p>
+    </div>
+    <div class="practices">
+      <div><h3>Practice on real calls</h3><p>Train on real call recordings, with a teleprompter coach on screen.</p></div>
+      <div><h3>A weekly check-in</h3><p>Time with Braden every week to review what's working.</p></div>
+      <div><h3>A small team</h3><p>We grow carefully, so nobody gets lost.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="q-title">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Ask us too</div><div class="rule"></div><h2 id="q-title">Five questions to ask any insurance recruiter</h2></div>
+    <ol class="qs">
+      <li>Am I an employee or an independent contractor?</li>
+      <li>What will I pay for, like leads, licensing and tools?</li>
+      <li>Who trains me, and what does week one look like?</li>
+      <li>What does a typical new agent actually earn? Ask for the typical result, not the top one.</li>
+      <li>What happens if I want to leave?</li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="families" aria-labelledby="fam-title">
+  <div class="wrap families">
+    <div class="head" style="margin-bottom:0"><div class="eyebrow">For families</div><div class="rule"></div><h2 id="fam-title">Looking for coverage for your family?</h2><p>Send a message and we'll walk you through your options. We never ask for health, bank or Social Security details by message.</p>
+      <div class="ctas" style="margin-top:8px"><a class="btn btn-gold" href="https://ig.me/m/bradengross.oc" target="_blank" rel="noopener">Send a message</a></div>
+    </div>
+    <ul class="checks">
+      <li><span>Final expenses, so your family isn't left with the bill.</span></li>
+      <li><span>Something to leave behind for the people you love.</span></li>
+      <li><span>A plan built around a monthly budget you choose.</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong style="color:var(--ink)">SummitBound is a life insurance team led by Braden Gross.</strong>
+    <span>Braden Gross · Licensed Life Insurance Agent · CA Lic. 4562206</span>
+    <span>Independent contractor role · Commission-based · No income is guaranteed.</span>
+    <span>Instagram: <a href="https://www.instagram.com/bradengross.oc/" target="_blank" rel="noopener">@bradengross.oc</a></span>
+  </div>
+</footer>
+
+<script>
+// Sign-up target: set FORM_URL to a Google Form link once it exists; until then the buttons open an Instagram DM.
+const FORM_URL = "";
+if (FORM_URL) document.querySelectorAll(".js-signup").forEach(a => { a.href = FORM_URL; a.textContent = "Save my seat"; });
+
+// Next two overviews: Tuesdays and Thursdays, 4:30 PM Pacific.
+(function () {
+  const list = document.getElementById("dates");
+  const pt = d => Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", weekday: "short", hour: "numeric", minute: "numeric", hourCycle: "h23" }).formatToParts(d).map(p => [p.type, p.value]));
+  const label = d => new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", weekday: "long", month: "short", day: "numeric" }).format(d);
+  const now = new Date(), found = [];
+  for (let k = 0; k < 15 && found.length < 2; k++) {
+    const d = new Date(now.getTime() + k * 86400000), p = pt(d);
+    if (p.weekday !== "Tue" && p.weekday !== "Thu") continue;
+    if (k === 0 && (+p.hour * 60 + +p.minute) >= 16 * 60 + 30) continue;
+    found.push(d);
+  }
+  if (found.length) list.innerHTML = found.map(d => '<li><b>' + label(d) + '</b><span>4:30 PM Pacific</span></li>').join("");
+})();
+
+// Copy the keyword for people who prefer to type it themselves.
+document.getElementById("copyWord").addEventListener("click", () => {
+  const out = document.getElementById("copied");
+  navigator.clipboard.writeText("SUMMIT").then(() => { out.textContent = "Copied"; }, () => { out.textContent = "Type SUMMIT in the message"; });
+});
+
+// Topographic contours behind the hero: irregular closed rings around a summit point.
+(function () {
+  const c = document.getElementById("contours"), ctx = c.getContext("2d");
+  function draw() {
+    const r = c.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio || 1);
+    c.width = Math.round(r.width * dpr); c.height = Math.round(r.height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, r.width, r.height);
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue("--contour").trim() || "rgba(201,164,76,.16)";
+    ctx.lineWidth = 1.2;
+    const cx = r.width * 0.78, cy = r.height * 0.32, rings = 16;
+    for (let i = 1; i <= rings; i++) {
+      const base = i * Math.max(r.width, r.height) / 26;
+      ctx.beginPath();
+      for (let a = 0; a <= Math.PI * 2 + 0.01; a += 0.04) {
+        const wob = 1 + 0.10 * Math.sin(3 * a + i * 0.55) + 0.06 * Math.sin(5 * a - i * 0.4) + 0.04 * Math.cos(7 * a + i);
+        const x = cx + Math.cos(a) * base * wob * 1.25, y = cy + Math.sin(a) * base * wob * 0.8;
+        a === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.closePath(); ctx.stroke();
+    }
+  }
+  draw();
+  addEventListener("resize", draw);
+  matchMedia("(prefers-color-scheme: light)").addEventListener?.("change", draw);
+})();
+</script>
+
+</body>
+</html>
